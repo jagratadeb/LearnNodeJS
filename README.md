@@ -1,5 +1,9 @@
 # Learn Node.js
 
+<img src="https://wakatime.com/badge/user/bb00c0fe-44b9-40c6-b043-77019e433b47/project/6b95c512-d1c1-4fa6-94b8-9001d2753750.svg"/>
+
+<img width="200" src="./assets/nodejs.png"/>
+
 This repo tracks my Node.js learning journey.
 
 ## Topics (so far)
