@@ -78,6 +78,12 @@ This repository documents my progress while learning **Node.js**, covering core 
 
 ---
 
+## ⚠️ Contributions
+
+🚫 Public contributions are **not accepted yet**. This is currently a personal learning repository.
+
+---
+
 ## 📈 What's Next?
 
 More advanced topics, optimizations, and full-stack integrations coming soon...
