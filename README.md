@@ -22,7 +22,7 @@ This repository documents my progress while learning **Node.js**, covering core 
 
 ### 🔰 Core Concepts
 
-* [✅] Modules in Node.js
+* ✅ Modules in Node.js
 * [ ] File Handling (`fs`)
 * [ ] HTTP Server
 * [ ] Working with URLs
