@@ -170,6 +170,7 @@ console.log('This executes immediately');
 
 ---
 
+
 ### 5. **If Non-Blocking Operation → Use Thread Pool**
 
 #### What is a Thread Pool?
