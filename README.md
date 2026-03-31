@@ -11,6 +11,13 @@
 </p>
 
 ---
+## Key Technologies Covered
+| Express.js | JWT | Socket.IO | REST API | NGINX |
+|---|---|---|---|---|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="56" alt="Express.js logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="56" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> |
+
+
+---
 
 ## 📖 Overview
 
