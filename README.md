@@ -16,6 +16,12 @@
 |---|---|---|---|---|
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="56" alt="Express.js logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="56" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> |
 
+### Brief Explanation
+- Express.js: A minimal Node.js framework for building APIs and web servers with clean routing and middleware.
+- JWT (JSON Web Token): A secure token format used for authentication and passing signed user/session data.
+- Socket.IO: A real-time communication library for features like chat, live updates, and notifications.
+- REST API: A standard way to design HTTP APIs around resources and methods like GET, POST, PUT, PATCH, and DELETE.
+- NGINX: A fast web server and reverse proxy used for load balancing, SSL handling, and serving backend apps in production.
 
 ---
 
