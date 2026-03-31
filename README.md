@@ -36,7 +36,7 @@ Foundational concepts to get you started:
 - ✅ Running JavaScript outside the browser
 
 **Files:**
-- `nodejs.md` - Core Node.js concepts
+- [notes.md](./Module%201%20%28Intro%29/notes.md) - Core Node.js concepts
 - `hello.js` - First Node.js program
 - `package.json` - Project dependencies
 
@@ -52,7 +52,7 @@ Learn how to structure code with Node.js modules:
 - ✅ Calculator module example with custom math operations
 
 **Files:**
-- `modules.md` - Module system deep-dive
+- [notes.md](./Module%202%20%28Modules%29/notes.md) - Module system deep-dive
 - `add.js` - Basic arithmetic module
 - `calculator.js` - Advanced calculator example
 - `math.js` - Custom math operations
@@ -69,6 +69,7 @@ Master file I/O operations in Node.js:
 - ✅ Asynchronous vs. synchronous file operations
 
 **Files:**
+- [notes.md](./Module%203%20%28File%20System%29/notes.md) - Module notes and summary
 - `file.js` - File system operations examples
 - `contacts.txt` - Sample data file
 - `DateFile.txt`, `createdFile.txt` - Generated during execution
@@ -86,9 +87,25 @@ Deep dive into Node.js architecture and event-driven model:
 - ✅ Asynchronous patterns (callbacks, Promises, async/await)
 
 **Files:**
-- `working.md` - Complete flow diagram and detailed explanations
-- `test.js` - Event loop demonstrations
+- [notes.md](./Module%204%20%28Working%20%20of%20NodeJs%29/notes.md) - Complete flow diagram and detailed explanations
 - `systemInfo.js` - System information retrieval
+
+---
+
+### Module 5: Web Server
+📚 **[Module 5 (Web Server)](./Module%205%20%28Web%20Server%29/)**
+
+Build a basic HTTP server with routing and request logging:
+- ✅ Creating server with `http.createServer`
+- ✅ Handling route paths and query parameters
+- ✅ Logging request details to a file
+- ✅ Returning route-based responses
+
+**Files:**
+- [notes.md](./Module%205%20%28Web%20Server%29/notes.md) - Module notes and summary
+- `index.js` - HTTP server and routing logic
+- `log.txt` - Request logs
+- `package.json` - Module scripts and dependencies
 
 ---
 
@@ -102,7 +119,7 @@ Deep dive into Node.js architecture and event-driven model:
 | **Event Loop** | ✅ | Non-blocking I/O, thread pool |
 | **Asynchronous Programming** | ✅ | Callbacks, event-driven architecture |
 | **Promises & Async/Await** | ✅ | Modern async patterns |
-| **HTTP Server** | 🔄 | Coming next |
+| **HTTP Server** | ✅ | Routing, query params, request logging |
 | **Express.js** | ⏳ | Advanced routing framework |
 | **REST APIs** | ⏳ | API design patterns |
 | **Database Integration** | ⏳ | MongoDB, SQL connections |
@@ -127,7 +144,8 @@ cd LearnNodeJS
 node "Module 1 (Intro)/hello.js"
 node "Module 2 (Modules)/calculator.js"
 node "Module 3 (File System)/file.js"
-node "Module 4 (Working  of NodeJs)/test.js"
+node "Module 4 (Working  of NodeJs)/systemInfo.js"
+node "Module 5 (Web Server)/index.js"
 ```
 
 ### Viewing Markdown Documentation
@@ -144,11 +162,11 @@ Each module includes `.md` files with detailed explanations:
 ```
 LearnNodeJS/
 ├── Module 1 (Intro)/              # Node.js fundamentals
-│   ├── nodejs.md
+│   ├── notes.md
 │   ├── hello.js
 │   └── package.json
 ├── Module 2 (Modules)/            # Module system
-│   ├── modules.md
+│   ├── notes.md
 │   ├── calculator.js
 │   ├── math.js
 │   └── add.js
@@ -156,9 +174,13 @@ LearnNodeJS/
 │   ├── file.js
 │   └── *.txt (sample files)
 ├── Module 4 (Working  of NodeJs)/ # Architecture & event loop
-│   ├── working.md                 # Detailed flow diagrams
-│   ├── test.js
+│   ├── notes.md                   # Detailed flow diagrams
 │   └── systemInfo.js
+├── Module 5 (Web Server)/         # HTTP server basics
+│   ├── notes.md
+│   ├── index.js
+│   ├── log.txt
+│   └── package.json
 ├── assets/                        # Images and resources
 ├── README.md                      # This file
 └── .gitignore                     # Git ignore rules
@@ -190,7 +212,7 @@ The heart of Node.js is understanding the **event-driven, non-blocking model**:
 Request → Event Queue → Event Loop → Process → Return Result
 ```
 
-For detailed explanation, see [Module 4: How Node.js Works](./Module%204%20%28Working%20%20of%20NodeJs%29/working.md)
+For detailed explanation, see [Module 4: How Node.js Works](./Module%204%20%28Working%20%20of%20NodeJs%29/notes.md)
 
 ---
 
@@ -211,7 +233,7 @@ For detailed explanation, see [Module 4: How Node.js Works](./Module%204%20%28Wo
 | Module 2 | ✅ 100% | Modules, require, exports |
 | Module 3 | ✅ 100% | File system operations |
 | Module 4 | ✅ 100% | Event loop, architecture |
-| HTTP & Servers | 🔄 In Progress | Coming next |
+| Module 5 | ✅ 100% | HTTP server, routing, logging |
 
 ---
 
