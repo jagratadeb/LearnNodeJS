@@ -34,6 +34,54 @@ This module demonstrates how to use Node.js File System APIs through the built-i
 ### 6. File Metadata (Stats)
 - statSync(path): Returns stats object with size, timestamps, type details, etc.
 
+## Code Examples
+
+### Write and Read (Sync)
+```js
+const fs = require("fs");
+
+fs.writeFileSync("sample.txt", "Hello from Node.js");
+const content = fs.readFileSync("sample.txt", "utf-8");
+console.log(content); // Hello from Node.js
+```
+
+Explanation:
+- `writeFileSync` creates or overwrites the file.
+- `readFileSync` returns content immediately and blocks until done.
+
+### Read File (Async)
+```js
+const fs = require("fs");
+
+fs.readFile("sample.txt", "utf-8", (err, data) => {
+	if (err) {
+		console.error("Read error:", err.message);
+		return;
+	}
+	console.log("File data:", data);
+});
+
+console.log("This line runs before callback output");
+```
+
+Explanation:
+- `readFile` is non-blocking.
+- The callback runs later after file I/O completes.
+
+### Append, Copy, and Delete
+```js
+const fs = require("fs");
+
+fs.appendFileSync("sample.txt", "\nNew line added");
+fs.cpSync("sample.txt", "sample-copy.txt");
+fs.unlinkSync("sample-copy.txt");
+```
+
+Explanation:
+- `appendFileSync` adds content to the end of a file.
+- `cpSync` creates a copy of the file.
+- `unlinkSync` removes the copied file.
+
 ## Important Learning
 - Use async APIs in real servers to avoid blocking requests.
 - Sync methods are useful for scripts, setup tasks, or quick demos.

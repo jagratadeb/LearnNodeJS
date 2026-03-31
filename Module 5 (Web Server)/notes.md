@@ -33,6 +33,55 @@ This module creates a basic HTTP server using Node.js and handles routing, query
 ### 6. Listen on Port
 - server.listen(8000) starts server on port 8000.
 
+## Code Examples
+
+### Minimal HTTP Server
+```js
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.end("Hello from server");
+});
+
+server.listen(8000, () => {
+  console.log("Server started on port 8000");
+});
+```
+
+Explanation:
+- `createServer` receives each request and sends a response.
+- `listen` binds the server to a port so browser/client can connect.
+
+### Route with Query Parameters
+```js
+const url = require("url");
+
+const parsed = url.parse("/about?name=Karan&uid=101", true);
+console.log(parsed.pathname);   // /about
+console.log(parsed.query.name); // Karan
+console.log(parsed.query.uid);  // 101
+```
+
+Explanation:
+- `url.parse(..., true)` converts query string into an object.
+- Useful for dynamic responses like `/about?name=...`.
+
+### Async Request Logging
+```js
+const fs = require("fs");
+
+const logLine = `${Date.now()}: /about request\n`;
+fs.appendFile("log.txt", logLine, (err) => {
+  if (err) {
+    console.error("Log write failed:", err.message);
+  }
+});
+```
+
+Explanation:
+- `appendFile` writes logs without blocking the server.
+- Error handling prevents silent logging failures.
+
 ## Run Commands
 From Module 5 folder:
 - npm install
