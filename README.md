@@ -118,8 +118,40 @@ Build a basic HTTP server with routing and request logging:
 - [notes.md](./Module%205%20%28Web%20Server%29/notes.md) - Module notes and summary
 - `index.js` - HTTP server and routing logic
 - `log.txt` - Request logs
-- `package.json` - Module scripts and dependencies
 
+---
+
+### Module 6: HTTP Methods
+📚 **[Module 6 (HTTP Methods)](./Module%206%20%28HTTP%20Methods%29/)**
+
+Learn how different HTTP methods map to CRUD-style API actions:
+- ✅ GET for reading data
+- ✅ POST for creating data
+- ✅ PUT for full replacement
+- ✅ PATCH for partial updates
+- ✅ DELETE for removing data
+
+**Files:**
+- [notes.md](./Module%206%20%28HTTP%20Methods%29/notes.md) - Method explanations and request examples
+- `index.js` - HTTP methods server example
+- `log.txt` - Request logs
+
+---
+
+### Module 7: Express.js
+📚 **[Module 7 (Express JS)](./Module%207%20%28Express%20JS%29/)**
+
+Use this folder for Express.js examples and dependencies:
+- ✅ Install Express inside the module folder
+- ✅ Keep module-specific packages isolated from the repo root
+- ✅ Run server code from the Express module directory
+
+**Setup commands:**
+```powershell
+cd "Module 7 (Express JS)"
+npm init
+npm install express
+```
 ---
 
 ## 🧠 Key Concepts Covered
@@ -159,6 +191,7 @@ node "Module 2 (Modules)/calculator.js"
 node "Module 3 (File System)/file.js"
 node "Module 4 (Working  of NodeJs)/systemInfo.js"
 node "Module 5 (Web Server)/index.js"
+node "Module 6 (HTTP Methods)/index.js"
 ```
 
 ### Viewing Markdown Documentation
@@ -194,6 +227,12 @@ LearnNodeJS/
 │   ├── index.js
 │   ├── log.txt
 │   └── package.json
+├── Module 6 (HTTP Methods)/       # HTTP methods and CRUD patterns
+│   ├── notes.md
+│   ├── index.js
+│   ├── log.txt
+│   └── package.json
+├── Module 7 (Express JS)/         # Express.js examples and exercises
 ├── assets/                        # Images and resources
 ├── README.md                      # This file
 └── .gitignore                     # Git ignore rules
