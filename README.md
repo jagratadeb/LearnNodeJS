@@ -7,17 +7,18 @@
 </p>
 
 <p align="center">
-  <b>A structured, hands-on guide to mastering Node.js and backend development</b>
+  <b>Personal learning journal: Node.js, Express, Postman, JWT, Socket.IO, REST, NGINX, MongoDB</b>
 </p>
 
 ---
 ## Key Technologies Covered
-| Express.js | JWT | Socket.IO | REST API | NGINX | MongoDB |
-|---|---|---|---|---|---|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="56" alt="Express.js logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="56" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="56" alt="MongoDb logo"/>
+| Express.js | Postman |  JWT | Socket.IO | REST API | NGINX | MongoDB |
+|---|---|---|---|---|---|---|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="56" alt="Express.js logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" width="56" alt="Postman logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="56" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="56" alt="MongoDb logo"/>
 
 ### Brief Explanation
 - Express.js: A minimal Node.js framework for building APIs and web servers with clean routing and middleware.
+
 - JWT (JSON Web Token): A secure token format used for authentication and passing signed user/session data.
 - Socket.IO: A real-time communication library for features like chat, live updates, and notifications.
 - REST API: A standard way to design HTTP APIs around resources and methods like GET, POST, PUT, PATCH, and DELETE.
@@ -27,13 +28,9 @@
 
 ## 📖 Overview
 
-A comprehensive learning repository documenting the journey from **Node.js fundamentals to advanced backend concepts**. Each module includes detailed explanations, practical code examples, and hands-on exercises.
+This repository documents my personal learning journey through Node.js and backend development. It gathers notes, runnable examples, and small projects I built while exploring topics from core Node behavior to building REST APIs with Express.
 
-**Perfect for anyone looking to:**
-- Understand how Node.js works under the hood
-- Build scalable backend applications
-- Master asynchronous JavaScript patterns
-- Learn real-world server architecture
+The content is written primarily for my own reference — concise notes, runnable examples, and practical experiments I can revisit later.
 
 ---
 
@@ -141,104 +138,93 @@ Learn how different HTTP methods map to CRUD-style API actions:
 ### Module 7: Express.js
 📚 **[Module 7 (Express JS)](./Module%207%20%28Express%20JS%29/)**
 
-Use this folder for Express.js examples and dependencies:
-- ✅ Install Express inside the module folder
-- ✅ Keep module-specific packages isolated from the repo root
-- ✅ Run server code from the Express module directory
+Express examples and small apps used while learning routing and middleware.
+
+- App setup with `express`
+- Basic routes and `req.query` usage
+- Run the examples inside the module folder
 
 **Setup commands:**
 ```powershell
 cd "Module 7 (Express JS)"
-npm init
-npm install express
+npm install
 ```
+
+---
+
+### Module 8: Postman & REST API (Express)
+📚 **[Module 8 (Postman)](./Module%208%20%28Postman%29/)**
+
+Practical REST API built with Express and a JSON file as simple storage — used for testing with Postman.
+
+- GET `/api/users` — return all users
+- GET `/api/users/:id` — return one user
+- POST `/api/users` — add a user (writes to `MOCK_DATA.json`)
+- PATCH `/api/users/:id` — partial update (merges fields)
+- DELETE `/api/users/:id` — remove a user
+
+Files:
+- `index.js` — Express server and endpoints
+- `MOCK_DATA.json` — sample data file
+- `package.json`
+ - `MOCK_DATA.json` — sample data file (generated with [Mockaroo](https://www.mockaroo.com))
+
 ---
 
 ## 🧠 Key Concepts Covered
 
 | Concept | Status | Details |
 |---------|--------|---------|
-| **Node.js Basics** | ✅ | Runtime, engines, setup |
-| **Modules & Exports** | ✅ | CommonJS, require, exports |
-| **File System (fs)** | ✅ | Read, write, async operations |
-| **Event Loop** | ✅ | Non-blocking I/O, thread pool |
-| **Asynchronous Programming** | ✅ | Callbacks, event-driven architecture |
-| **Promises & Async/Await** | ✅ | Modern async patterns |
-| **HTTP Server** | ✅ | Routing, query params, request logging |
-| **Express.js** | ⏳ | Advanced routing framework |
-| **REST APIs** | ⏳ | API design patterns |
-| **Database Integration** | ⏳ | MongoDB, SQL connections |
-| **Authentication** | ⏳ | JWT, sessions, security |
+| **Node.js Basics** | ✅ | Runtime, V8 engine, `node` CLI, package.json basics |
+| **Modules & Exports** | ✅ | CommonJS (`require`, `module.exports`), structuring code into files |
+| **File System (`fs`)** | ✅ | `readFile`/`writeFile`, sync vs async, append, copy, delete, `fs.stat` |
+| **Event Loop & libuv** | ✅ | Event queue, callback processing, thread pool for background I/O |
+| **Asynchronous Programming** | ✅ | Callbacks, Promises, `async`/`await`, error handling patterns |
+| **Promises & Async/Await** | ✅ | Converting callbacks to Promises, `try/catch` with async functions |
+| **HTTP Server (raw)** | ✅ | `http.createServer`, routing by URL, query parsing, request logging |
+| **HTTP Methods & REST** | ✅ | GET, POST, PUT, PATCH, DELETE mapped to CRUD semantics |
+| **Express.js** | ✅ | `express()` app, route handlers, `req.query`, middleware basics |
+| **File-backed persistence** | ✅ | Simple JSON storage pattern (`MOCK_DATA.json`) used for exercises |
+| **Postman** | ✅ | API testing workflow: requests, bodies, params, and inspecting responses |
+| **CRUD patterns** | ✅ | Create, read, update (merge vs replace), delete, response conventions |
+| **Merging updates** | ✅ | Object spread (`{ ...old, ...updates }`) for shallow merges in PATCH handlers |
+| **Security & Auth (concepts)** | ⏳ | JWT-based flows, token handling — planned/partially explored in notes |
+| **Databases (concepts)** | ⏳ | MongoDB integration patterns (conceptual notes, next steps) |
+| **Realtime (concepts)** | ⏳ | Socket.IO idea and use-cases (chat, notifications) |
+| **Deployment (concepts)** | ⏳ | NGINX as reverse proxy / load balancer (notes for future work) |
+
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js installed ([Download](https://nodejs.org/))
-- Basic JavaScript knowledge
-- A code editor (VS Code recommended)
+Essential downloads:
 
-### Running Examples
+- Node.js: https://nodejs.org/
+- Postman: https://www.postman.com/downloads/
 
-```bash
-# Navigate to the repository
-cd LearnNodeJS
+Minimal steps to run the examples locally:
 
-# Run a specific module
-node "Module 1 (Intro)/hello.js"
-node "Module 2 (Modules)/calculator.js"
-node "Module 3 (File System)/file.js"
-node "Module 4 (Working  of NodeJs)/systemInfo.js"
-node "Module 5 (Web Server)/index.js"
-node "Module 6 (HTTP Methods)/index.js"
+1. Open a terminal and go to the repo root.
+2. Run individual scripts with `node`, for example:
+
+```powershell
+node "Module 1 (Intro)\hello.js"
 ```
 
-### Viewing Markdown Documentation
+3. To run the Postman REST API (Module 8):
 
-Each module includes `.md` files with detailed explanations:
-```bash
-# Open in your editor or GitHub to view formatted documentation
+```powershell
+cd "Module 8 (Postman)"
+npm install
+npm start
 ```
+
+Then use Postman or curl to call the endpoints on `http://localhost:8000`.
 
 ---
 
-## 📁 Repository Structure
-
-```
-LearnNodeJS/
-├── Module 1 (Intro)/              # Node.js fundamentals
-│   ├── notes.md
-│   ├── hello.js
-│   └── package.json
-├── Module 2 (Modules)/            # Module system
-│   ├── notes.md
-│   ├── calculator.js
-│   ├── math.js
-│   └── add.js
-├── Module 3 (File System)/        # File I/O operations
-│   ├── file.js
-│   └── *.txt (sample files)
-├── Module 4 (Working  of NodeJs)/ # Architecture & event loop
-│   ├── notes.md                   # Detailed flow diagrams
-│   └── systemInfo.js
-├── Module 5 (Web Server)/         # HTTP server basics
-│   ├── notes.md
-│   ├── index.js
-│   ├── log.txt
-│   └── package.json
-├── Module 6 (HTTP Methods)/       # HTTP methods and CRUD patterns
-│   ├── notes.md
-│   ├── index.js
-│   ├── log.txt
-│   └── package.json
-├── Module 7 (Express JS)/         # Express.js examples and exercises
-├── assets/                        # Images and resources
-├── README.md                      # This file
-└── .gitignore                     # Git ignore rules
-```
-
----
+<!-- repository structure removed as requested -->
 
 ## 💡 Learning Tips
 
@@ -259,12 +245,7 @@ LearnNodeJS/
 - ✅ Fast execution with V8 engine
 
 ### Non-Blocking Architecture
-The heart of Node.js is understanding the **event-driven, non-blocking model**:
-```
-Request → Event Queue → Event Loop → Process → Return Result
-```
-
-For detailed explanation, see [Module 4: How Node.js Works](./Module%204%20%28Working%20%20of%20NodeJs%29/notes.md)
+<!-- Non-Blocking Architecture section removed (covered in Module 4 notes) -->
 
 ---
 
@@ -277,15 +258,7 @@ For detailed explanation, see [Module 4: How Node.js Works](./Module%204%20%28Wo
 
 ---
 
-## 📈 Learning Progress
-
-| Module | Completion | Topics |
-|--------|------------|---------|
-| Module 1 | ✅ 100% | Node.js intro, setup |
-| Module 2 | ✅ 100% | Modules, require, exports |
-| Module 3 | ✅ 100% | File system operations |
-| Module 4 | ✅ 100% | Event loop, architecture |
-| Module 5 | ✅ 100% | HTTP server, routing, logging |
+<!-- Learning Progress table removed; Key Concepts covers progress/status. -->
 
 ---
 
