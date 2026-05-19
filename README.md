@@ -158,17 +158,48 @@ npm install
 
 Practical REST API built with Express and a JSON file as simple storage — used for testing with Requestly.
 
+**Endpoints:**
 - GET `/api/users` — return all users
 - GET `/api/users/:id` — return one user
 - POST `/api/users` — add a user (writes to `MOCK_DATA.json`)
 - PATCH `/api/users/:id` — partial update (merges fields)
 - DELETE `/api/users/:id` — remove a user
 
-Files:
+**Files:**
 - `index.js` — Express server and endpoints
 - `MOCK_DATA.json` — sample data file
 - `package.json`
  - `MOCK_DATA.json` — sample data file (generated with [Mockaroo](https://www.mockaroo.com))
+
+---
+
+### Module 9: Middleware
+📚 **[Module 9 (Middleware)](./Module%209%20%28Middleware%29/)**
+
+Deep dive into Express middleware patterns and building robust REST APIs with proper error handling.
+
+- ✅ Custom middleware functions (logging, console output)
+- ✅ Middleware execution order and `next()` flow
+- ✅ Complete CRUD REST API with all HTTP methods
+- ✅ Error handling for missing IDs (404 responses)
+- ✅ File write error handling (500 responses)
+- ✅ Request logging to file with timestamps
+- ✅ URL-encoded request body parsing
+- ✅ Validating and checking for resource existence
+
+**Endpoints:**
+- GET `/api/users` — return all users
+- GET `/api/users/:id` — return one user (404 if not found)
+- POST `/api/users` — add a user with auto-increment ID
+- PATCH `/api/users/:id` — partial update using object spread (404 if not found)
+- DELETE `/api/users/:id` — remove a user (404 if not found)
+
+**Files:**
+- `index.js` — Express server with middleware and REST endpoints
+- `MOCK_DATA.json` — sample user data
+- `package.json` — Express dependency
+- `notes.md` — Detailed middleware explanations
+- `log.txt` — Request log file (auto-generated)
 
 ---
 
@@ -185,6 +216,7 @@ Files:
 | **HTTP Server (raw)** | ✅ | `http.createServer`, routing by URL, query parsing, request logging |
 | **HTTP Methods & REST** | ✅ | GET, POST, PUT, PATCH, DELETE mapped to CRUD semantics |
 | **Express.js** | ✅ | `express()` app, route handlers, `req.query`, middleware basics |
+| **Middleware** | ✅ | Custom middleware, `next()` flow, execution order, logging, error handling |
 | **File-backed persistence** | ✅ | Simple JSON storage pattern (`MOCK_DATA.json`) used for exercises |
 | **Requestly** | ✅ | API testing workflow: requests, bodies, params, and inspecting responses |
 | **CRUD patterns** | ✅ | Create, read, update (merge vs replace), delete, response conventions |
