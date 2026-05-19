@@ -7,22 +7,23 @@
 </p>
 
 <p align="center">
-  <b>Personal learning journal: Node.js, Express, Postman, JWT, Socket.IO, REST, NGINX, MongoDB</b>
+  <b>Personal learning journal: Node.js, Express, Requestly, JWT, Socket.IO, REST, NGINX, MongoDB</b>
 </p>
 
 ---
 ## Key Technologies Covered
-| Express.js | Postman |  JWT | Socket.IO | REST API | NGINX | MongoDB |
+| Express.js | Requestly |  JWT | Socket.IO | REST API | NGINX | MongoDB |
 |---|---|---|---|---|---|---|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="56" alt="Express.js logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" width="56" alt="Postman logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="56" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="56" alt="MongoDb logo"/>
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="50" alt="Express.js logo"/> | <img src="https://requestly.com/wp-content/uploads//2025/05/RQ-Logo.svg" alt="Requestly logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="50" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" alt="MongoDb logo"/>
 
 ### Brief Explanation
-- Express.js: A minimal Node.js framework for building APIs and web servers with clean routing and middleware.
-
-- JWT (JSON Web Token): A secure token format used for authentication and passing signed user/session data.
-- Socket.IO: A real-time communication library for features like chat, live updates, and notifications.
-- REST API: A standard way to design HTTP APIs around resources and methods like GET, POST, PUT, PATCH, and DELETE.
-- NGINX: A fast web server and reverse proxy used for load balancing, SSL handling, and serving backend apps in production.
+- `Express.js`: A minimal Node.js framework for building APIs and web servers with clean routing and middleware.
+- `Requestly`: A tool for testing and debugging APIs by intercepting and modifying HTTP requests/responses.
+- `JWT (JSON Web Token)`: A secure token format used for authentication and passing signed user/session data.
+- `Socket.IO`: A real-time communication library for features like chat, live updates, and notifications.
+- `REST API`: A standard way to design HTTP APIs around resources and methods like GET, POST, PUT, PATCH, and DELETE.
+- `NGINX`: A fast web server and reverse proxy used for load balancing, SSL handling, and serving backend apps in production.
+- `MongoDB`: A NoSQL document database commonly used with Node.js for flexible data storage.
 
 ---
 
@@ -152,10 +153,10 @@ npm install
 
 ---
 
-### Module 8: Postman & REST API (Express)
-📚 **[Module 8 (Postman)](./Module%208%20%28Postman%29/)**
+### Module 8: Requestly & REST API (Express)
+📚 **[Module 8 (Requestly)](./Module%208%20%28Requestly%29/)**
 
-Practical REST API built with Express and a JSON file as simple storage — used for testing with Postman.
+Practical REST API built with Express and a JSON file as simple storage — used for testing with Requestly.
 
 - GET `/api/users` — return all users
 - GET `/api/users/:id` — return one user
@@ -185,7 +186,7 @@ Files:
 | **HTTP Methods & REST** | ✅ | GET, POST, PUT, PATCH, DELETE mapped to CRUD semantics |
 | **Express.js** | ✅ | `express()` app, route handlers, `req.query`, middleware basics |
 | **File-backed persistence** | ✅ | Simple JSON storage pattern (`MOCK_DATA.json`) used for exercises |
-| **Postman** | ✅ | API testing workflow: requests, bodies, params, and inspecting responses |
+| **Requestly** | ✅ | API testing workflow: requests, bodies, params, and inspecting responses |
 | **CRUD patterns** | ✅ | Create, read, update (merge vs replace), delete, response conventions |
 | **Merging updates** | ✅ | Object spread (`{ ...old, ...updates }`) for shallow merges in PATCH handlers |
 | **Security & Auth (concepts)** | ⏳ | JWT-based flows, token handling — planned/partially explored in notes |
@@ -201,7 +202,7 @@ Files:
 Essential downloads:
 
 - Node.js: https://nodejs.org/
-- Postman: https://www.postman.com/downloads/
+- Requestly: https://requestly.io/downloads/
 
 Minimal steps to run the examples locally:
 
@@ -212,15 +213,15 @@ Minimal steps to run the examples locally:
 node "Module 1 (Intro)\hello.js"
 ```
 
-3. To run the Postman REST API (Module 8):
+3. To run the Requestly REST API (Module 8):
 
 ```powershell
-cd "Module 8 (Postman)"
+cd "Module 8 (Requestly)"
 npm install
 npm start
 ```
 
-Then use Postman or curl to call the endpoints on `http://localhost:8000`.
+Then use Requestly or curl to call the endpoints on `http://localhost:8000`.
 
 ---
 
@@ -244,9 +245,6 @@ Then use Postman or curl to call the endpoints on `http://localhost:8000`.
 - ✅ JavaScript on both frontend and backend
 - ✅ Fast execution with V8 engine
 
-### Non-Blocking Architecture
-<!-- Non-Blocking Architecture section removed (covered in Module 4 notes) -->
-
 ---
 
 ## ⚠️ Important Notes
@@ -255,10 +253,6 @@ Then use Postman or curl to call the endpoints on `http://localhost:8000`.
 - 📝 Code examples may not follow production best practices
 - 🔒 Always use proper error handling and validation in production code
 - 🛡️ See `.gitignore` for sensitive files that won't be committed
-
----
-
-<!-- Learning Progress table removed; Key Concepts covers progress/status. -->
 
 ---
 
