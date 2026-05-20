@@ -173,8 +173,8 @@ Practical REST API built with Express and a JSON file as simple storage — used
 
 ---
 
-### Module 9: Middleware
-📚 **[Module 9 (Middleware)](./Module%209%20%28Middleware%29/)**
+### Module 9: Middleware and HTTP Headers
+📚 **[Module 9 (Middleware and HTTP Headers)](./Module%209%20(Middleware%20and%20HTTP%20Headers)/)**
 
 Deep dive into Express middleware patterns and building robust REST APIs with proper error handling.
 
@@ -186,6 +186,9 @@ Deep dive into Express middleware patterns and building robust REST APIs with pr
 - ✅ Request logging to file with timestamps
 - ✅ URL-encoded request body parsing
 - ✅ Validating and checking for resource existence
+- HTTP headers concepts
+- request and response header manipulation
+
 
 **Endpoints:**
 - GET `/api/users` — return all users

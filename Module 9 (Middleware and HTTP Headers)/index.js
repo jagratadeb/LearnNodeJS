@@ -28,7 +28,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// HTTP headers (resquest and response headers)
 app.get("/api/users", (req, res) => {
+  // custom headers should start with "x"
+  res.setHeader("x-custom-header", "Jagrata Deb"); 
+  console.log(req.headers);
   return res.json(users);
 });
 
