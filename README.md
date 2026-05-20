@@ -186,8 +186,9 @@ Deep dive into Express middleware patterns and building robust REST APIs with pr
 - ✅ Request logging to file with timestamps
 - ✅ URL-encoded request body parsing
 - ✅ Validating and checking for resource existence
-- HTTP headers concepts
-- request and response header manipulation
+- ✅ HTTP headers concepts
+- ✅ Request and response header manipulation
+- ✅ Implemented HTTP status codes and conventions
 
 
 **Endpoints:**
