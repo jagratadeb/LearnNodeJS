@@ -12,9 +12,9 @@
 
 ---
 ## Key Technologies Covered
-| Express.js | Requestly |  JWT | Socket.IO | REST API | NGINX | MongoDB |
-|---|---|---|---|---|---|---|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="50" alt="Express.js logo"/> | <img src="https://requestly.com/wp-content/uploads//2025/05/RQ-Logo.svg" alt="Requestly logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="50" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" alt="MongoDb logo"/>
+| Express.js | Requestly |  JWT | Socket.IO | REST API | NGINX | MongoDB | Serverless |
+|---|---|---|---|---|---|---|---|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="50" alt="Express.js logo"/> | <img src="https://requestly.com/wp-content/uploads//2025/05/RQ-Logo.svg" alt="Requestly logo"/> | <img src="https://jwt.io/img/pic_logo.svg" width="56" alt="JWT logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" width="50" alt="Socket.IO logo"/> | <img src="./assets/rest-api-logo.svg" width="56" alt="REST API logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width="56" alt="NGINX logo"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" alt="MongoDb logo"/> | <img src="https://user-images.githubusercontent.com/2752551/30405068-a7733b34-989e-11e7-8f66-7badaf1373ed.png" width="57" alt="serverless"/>
 
 ### Brief Explanation
 - `Express.js`: A minimal Node.js framework for building APIs and web servers with clean routing and middleware.
@@ -24,6 +24,7 @@
 - `REST API`: A standard way to design HTTP APIs around resources and methods like GET, POST, PUT, PATCH, and DELETE.
 - `NGINX`: A fast web server and reverse proxy used for load balancing, SSL handling, and serving backend apps in production.
 - `MongoDB`: A NoSQL document database commonly used with Node.js for flexible data storage.
+- `Serverless`: A framework to deploy and manage serverless applications across cloud providers without managing servers.
 
 ---
 
