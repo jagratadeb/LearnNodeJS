@@ -1,7 +1,3 @@
-// Simple Express + Mongoose example for managing users.
-// Purpose: demonstrate connecting to MongoDB, defining a User model,
-// and implementing robust REST endpoints for common operations.
-
 const express = require("express");
 const mongoose = require("mongoose");
 
@@ -28,7 +24,7 @@ function mapBodyToUpdates(body = {}) {
 
 // connect to MongoDB
 mongoose
-  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => {
     console.error("MongoDB connection error:", err.message || err);
@@ -47,6 +43,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+// Ensure a unique index exists for email at the MongoDB level.
 const User = mongoose.model("User", userSchema);
 
 // Middleware
@@ -67,18 +64,6 @@ app.get("/api/users", async (req, res) => {
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Failed to fetch users" });
-  }
-});
-
-// GET /api/users/:id - get user by _id
-app.get("/api/users/:id", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id).lean();
-    if (!user) return res.status(404).json({ error: "User not found" });
-    return res.status(200).json(user);
-  } catch (err) {
-    console.error(err);
-    return res.status(400).json({ error: "Invalid id" });
   }
 });
 
@@ -115,14 +100,15 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
-// PATCH /api/users/:id - update by _id
-app.patch("/api/users/:id", async (req, res) => {
+// PATCH /api/users/by-email - update by email (simple body-based)
+app.patch("/api/users/by-email", async (req, res) => {
   try {
+    const { email } = req.body || {}; // reads email from body using object destructuring
+    if (!email) return res.status(400).json({ error: "email required" });
     const updates = mapBodyToUpdates(req.body);
     if (Object.keys(updates).length === 0)
       return res.status(400).json({ error: "No updatable fields provided" });
-
-    const updated = await User.findByIdAndUpdate(req.params.id, updates, {
+    const updated = await User.findOneAndUpdate({ email }, updates, {
       new: true,
       runValidators: true,
     }).lean();
@@ -130,46 +116,11 @@ app.patch("/api/users/:id", async (req, res) => {
     return res.status(200).json({ message: "updated", user: updated });
   } catch (err) {
     console.error(err);
-    return res.status(400).json({ error: "Invalid request" });
-  }
-});
-
-// PATCH /api/users/by-email - update by email (clients only need to know email)
-app.patch("/api/users/by-email", async (req, res) => {
-  try {
-    const { email } = req.body || {};
-    if (!email) return res.status(400).json({ error: "email required" });
-    const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ error: "User not found" });
-
-    const updates = mapBodyToUpdates(req.body);
-    if (Object.keys(updates).length === 0)
-      return res.status(400).json({ error: "No updatable fields provided" });
-
-    const updated = await User.findByIdAndUpdate(user._id, updates, {
-      new: true,
-      runValidators: true,
-    }).lean();
-    return res.status(200).json({ message: "updated", user: updated });
-  } catch (err) {
-    console.error(err);
     return res.status(500).json({ error: "Failed to update" });
   }
 });
 
-// DELETE /api/users/:id - delete by _id
-app.delete("/api/users/:id", async (req, res) => {
-  try {
-    const deleted = await User.findByIdAndDelete(req.params.id).lean();
-    if (!deleted) return res.status(404).json({ error: "User not found" });
-    return res.status(200).json({ message: "deleted", user: deleted });
-  } catch (err) {
-    console.error(err);
-    return res.status(400).json({ error: "Invalid id" });
-  }
-});
-
-// DELETE /api/users/by-email - delete by email
+// DELETE /api/users/by-email - delete by email (simple body-based)
 app.delete("/api/users/by-email", async (req, res) => {
   try {
     const { email } = req.body || {};
@@ -180,6 +131,20 @@ app.delete("/api/users/by-email", async (req, res) => {
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Failed to delete" });
+  }
+});
+
+// GET /api/users/by-email - get user by email (query param)
+app.get("/api/users/by-email", async (req, res) => {
+  try {
+    const { email } = req.query || {};
+    if (!email) return res.status(400).json({ error: "email required" });
+    const user = await User.findOne({ email }).lean();
+    if (!user) return res.status(404).json({ error: "User not found" });
+    return res.status(200).json(user);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Failed to fetch user" });
   }
 });
 
