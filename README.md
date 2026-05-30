@@ -146,12 +146,6 @@ Express examples and small apps used while learning routing and middleware.
 - Basic routes and `req.query` usage
 - Run the examples inside the module folder
 
-**Setup commands:**
-```powershell
-cd "Module 7 (Express JS)"
-npm install
-```
-
 ---
 
 ### Module 8: Requestly & REST API (Express)
@@ -191,7 +185,6 @@ Deep dive into Express middleware patterns and building robust REST APIs with pr
 - ✅ Request and response header manipulation
 - ✅ Implemented HTTP status codes and conventions
 
-
 **Endpoints:**
 - GET `/api/users` — return all users
 - GET `/api/users/:id` — return one user (404 if not found)
@@ -207,7 +200,47 @@ Deep dive into Express middleware patterns and building robust REST APIs with pr
 - `log.txt` — Request log file (auto-generated)
 
 ---
+### Module 10: MongoDB
+📚 **[Module 10 (MongoDB)](./Module%2010%20(MongoDB)/)**
 
+Develop an undertsanding of MongoDB and how to integrate it with Node.js applications.
+
+- ✅ MongoDB basics: collections, documents, ObjectIDs
+- ✅ Connecting to MongoDB with the official Node.js driver
+- ✅ Performing CRUD operations (Create, Read, Update, Delete)
+
+
+---
+### Module 11: (Model View Controller)
+📚 **[Module 11 (Model View Controller)](./Module%2011%20(Model%20View%20Controller)/)**
+
+Learn the MVC architectural pattern and how to structure Node.js applications for better maintainability.
+
+- ✅ Understanding Models, Views, and Controllers
+- ✅ Refactoring Express applications to follow MVC principles
+  - Models: Define data schemas and database interactions
+  - Views: Handle presentation logic (e.g., rendering templates)
+  - Controllers: Manage request handling and business logic
+- ✅ Benefits of MVC: separation of concerns, 
+easier testing, and scalability
+
+--- 
+
+### Module 12: (URL Shortener)
+📚 **[Module 12 (URL Shortener)](./Module%2012%20(Url%20Shotener)/)**
+
+Build a simple URL shortener service using MonogoDB for storage and Express for the API.
+- ✅ Generating short URLs with unique identifiers
+- ✅ Storing original and short URL mappings in MongoDB
+- ✅ Redirecting short URLs to their original destinations
+
+**Required Packages:**
+```bash
+npm install nanoid
+npm install mongoose
+npm install express
+```
+---
 ## 🧠 Key Concepts Covered
 
 | Concept | Status | Details |
