@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>URL Shortner</h1>
+    <% if (locals.id) {%>
+      <p>URL Generated: http://localhost:8000/<%= id %></p>
+    <% } %>
+    <div>  
+      <form method="POST" action="/url">
+        <label for="urlInput">Enter URL</label>
+        <br>
+        <input type="text" name="url" placeholder="https://example.com" id="urlInput">
+        <button type="submit">Generate</button>
+      </form>
+    </div>
+
+
+    <div>      
+      <form action="/delete" method="POST">
+        <label for="deleteInput">Enter Short ID to delete</label>
+        <br>
+        <input type="text" name="shortId" placeholder="Short ID" id="deleteInput">
+        <button type="submit">Delete</button>
+      </form>
+
+      <% if (locals.deleteMessage) {%>
+        <p><%= deleteMessage %></p>
+      <% } %>
+    </div>
+
+    <div>
+      <% if (locals.urls && locals.urls.length > 0) {%>
+        <h2>All Short URLs</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Short ID</th>
+              <th>Original URL</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% locals.urls.forEach(url => { %>
+              <tr>
+                <td><%= url.shortId %></td>
+                <td><a href="<%= url.redirectUrl %>" target="_blank"><%= url.redirectUrl %></a></td>
+                <td>
+                  <form method="POST" action="/delete" style="display:inline">
+                    <input type="hidden" name="shortId" value="<%= url.shortId %>">
+                    <button type="submit">Delete</button>
+                  </form>
+                  <button><a href="/<%= url.shortId %>" target="_blank">Open</a></button>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else if (typeof urls !== 'undefined') { %>
+        <p>No short URLs found.</p>
+      <% } %>
+    </div>
+
+  </body>
+</html>
