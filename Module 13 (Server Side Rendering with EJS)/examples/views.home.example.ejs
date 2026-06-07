@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Home - Example</title>
+  </head>
+  <body>
+    <h1>URL Shortener (Example View)</h1>
+    <% if (locals.id) { %>
+      <p>URL Generated: http://localhost:8000/<%= id %></p>
+    <% } %>
+
+    <form method="POST" action="/url">
+      <input type="text" name="url" placeholder="https://example.com">
+      <button type="submit">Generate</button>
+    </form>
+
+    <h2>All Short URLs</h2>
+    <% if (locals.urls && locals.urls.length > 0) { %>
+      <table border="1">
+        <thead><tr><th>Short ID</th><th>Redirect URL</th><th>Actions</th></tr></thead>
+        <tbody>
+          <% locals.urls.forEach(url => { %>
+            <tr>
+              <td><%= url.shortId %></td>
+              <td><a href="<%= url.redirectUrl %>"><%= url.redirectUrl %></a></td>
+              <td>
+                <form method="POST" action="/delete" style="display:inline">
+                  <input type="hidden" name="shortId" value="<%= url.shortId %>">
+                  <button type="submit">Delete</button>
+                </form>
+                <a href="/<%= url.shortId %>" target="_blank">Open</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No short URLs yet.</p>
+    <% } %>
+  </body>
+</html>
